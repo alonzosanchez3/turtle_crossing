@@ -2,11 +2,13 @@ from turtle import Turtle, Screen
 from custom_turtle import CustomTurtle
 import time
 from car_manager import CarManager
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(height=500, width=1000)
 custom_turtle = CustomTurtle()
 car_manager = CarManager()
+scoreboard = Scoreboard()
 screen.tracer(0)
 screen.listen()
 screen.onkey(custom_turtle.move, 'w')
@@ -26,6 +28,9 @@ while game_is_on:
   if custom_turtle.is_at_finish_line():
     custom_turtle.go_to_start()
     car_manager.level_up()
+    scoreboard.level_up()
+
+scoreboard.game_over()
 
 
 
