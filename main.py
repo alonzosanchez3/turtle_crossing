@@ -23,6 +23,11 @@ while game_is_on:
     if(car.distance(custom_turtle) < 20):
       game_is_on = False
 
+  if custom_turtle.is_at_finish_line():
+    custom_turtle.go_to_start()
+    car_manager.level_up()
+
+
 
 
 screen.exitonclick()
